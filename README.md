@@ -2,6 +2,8 @@
 Mavenized version of Amazon MWS Report API
 
 [![](https://jitpack.io/v/ChameleonTartu/ext-lib-amazon-mws-reports.svg)](https://jitpack.io/#ChameleonTartu/ext-lib-amazon-mws-reports)
+[![](https://travis-ci.org/ChameleonTartu/ext-lib-amazon-mws-reports.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+
 
 # How to use into Maven (pom.xml)
 
