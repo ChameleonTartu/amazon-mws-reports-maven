@@ -24,7 +24,7 @@ Dependency itself:
 <dependency>
     <groupId>com.github.ChameleonTartu</groupId>
     <artifactId>ext-lib-amazon-mws-reports</artifactId>
-    <version>1.0.0-alpha.1</version>
+    <version>v1.0.0</version>
 </dependency>
 ```
 
