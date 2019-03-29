@@ -18,19 +18,23 @@
 
 package com.amazonaws.mws.model;
 
-import java.util.List;
-
 public class ResponseHeaderMetadata {
   private String requestId;
   private String responseContext;
   private String timestamp;
+  private String quotaMax;
+  private String quotaRemaining;
+  private String quotaResetsOn;
 
   public ResponseHeaderMetadata() {}
 
-  public ResponseHeaderMetadata(String requestId, String responseContext, String timestamp) {
+  public ResponseHeaderMetadata(String requestId, String responseContext, String timestamp, String quotaMax, String quotaRemaining, String quotaResetsOn) {
     this.requestId = requestId;
     this.responseContext = responseContext;
     this.timestamp = timestamp;
+    this.quotaMax = quotaMax;
+    this.quotaRemaining = quotaRemaining;
+    this.quotaResetsOn = quotaResetsOn;
   }
 
   public String getRequestId() {
@@ -45,12 +49,27 @@ public class ResponseHeaderMetadata {
     return timestamp;
   }
 
+  public String getQuotaMax() {
+    return quotaMax;
+  }
+
+  public String getQuotaRemaining() {
+    return quotaRemaining;
+  }
+
+  public String getQuotaResetsOn() {
+    return quotaResetsOn;
+  }
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("requestId : " + requestId + "\n");
     sb.append("responseContext : " + responseContext + "\n");
     sb.append("timestamp : " + timestamp);
+    sb.append("quotaMax : " + quotaMax);
+    sb.append("quotaRemaining : " + quotaRemaining);
+    sb.append("quotaResetsOn : " + quotaResetsOn);
     return sb.toString();
   }
 }

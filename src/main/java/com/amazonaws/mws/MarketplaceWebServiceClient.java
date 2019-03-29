@@ -2287,15 +2287,27 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
       Header requestId = null;
       Header responseContext = null;
       Header timestamp = null;
+      Header quotaMax = null;
+      Header quotaRemaining = null;
+      Header quotaResetsOn = null;
 
       requestId = getFirstHeader(response, "x-mws-request-id");
       responseContext = getFirstHeader(response, "x-mws-response-context");
       timestamp = getFirstHeader(response, "x-mws-timestamp");
+      quotaMax = getFirstHeader(response, "x-mws-quota-max");
+      quotaRemaining = getFirstHeader(response, "x-mws-quota-remaining");
+      quotaResetsOn = getFirstHeader(response, "x-mws-quota-resetsOn");
+
+
 
       return new ResponseHeaderMetadata(
-        requestId != null ? requestId.getValue() : null,
-        responseContext != null ? responseContext.getValue() : null,
-        timestamp != null ? timestamp.getValue() : null);
+              requestId != null ? requestId.getValue() : null,
+              responseContext != null ? responseContext.getValue() : null,
+              timestamp != null ? timestamp.getValue() : null,
+              quotaMax != null ? quotaMax.getValue() : null,
+              quotaRemaining != null ? quotaRemaining.getValue() : null,
+              quotaResetsOn != null ? quotaResetsOn.getValue() : null
+      );
     }
     
     /**
