@@ -19,7 +19,6 @@
 
 package com.amazonaws.mws;
 
-import java.lang.reflect.Method;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,6 +27,7 @@ import java.io.OutputStream;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -45,9 +45,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TimeZone;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -67,37 +67,34 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 
-
 import org.apache.commons.codec.binary.Base64;
-import org.apache.http.Header;
-import org.apache.http.message.BasicHeader;
-import org.apache.http.HttpStatus;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.entity.InputStreamEntity;
-import org.apache.http.protocol.HTTP;
-import org.apache.http.NameValuePair;
-import org.apache.http.HttpResponse;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.CoreProtocolPNames;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.HttpHost;
-import org.apache.http.conn.params.ConnRoutePNames;
-import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.client.HttpClient;
+import org.apache.http.Header;
+import org.apache.http.HttpHost;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.NameValuePair;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
-import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.apache.http.protocol.HttpContext;
-import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.ClientContext;
-
-
+import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.entity.InputStreamEntity;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.PoolingClientConnectionManager;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.CoreProtocolPNames;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.mws.model.CancelFeedSubmissionsRequest;
 import com.amazonaws.mws.model.CancelFeedSubmissionsResponse;
@@ -139,8 +136,8 @@ import com.amazonaws.mws.model.ManageReportScheduleRequest;
 import com.amazonaws.mws.model.ManageReportScheduleResponse;
 import com.amazonaws.mws.model.RequestReportRequest;
 import com.amazonaws.mws.model.RequestReportResponse;
-import com.amazonaws.mws.model.ResponseMetadata;
 import com.amazonaws.mws.model.ResponseHeaderMetadata;
+import com.amazonaws.mws.model.ResponseMetadata;
 import com.amazonaws.mws.model.StatusList;
 import com.amazonaws.mws.model.SubmitFeedRequest;
 import com.amazonaws.mws.model.SubmitFeedResponse;
@@ -171,6 +168,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     private ExecutorService asyncExecutor;
     
     private List<Header> defaultHeaders = new ArrayList<Header>();
+    private ResponseHeaderMetadata lastResponseHeaderMetadata = null;
     
     private static JAXBContext  jaxbContext;
     private static ThreadLocal<Unmarshaller> unmarshaller;
@@ -304,9 +302,6 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     // Public API ------------------------------------------------------------//
-
-
-        
     /**
      * Get Report 
      *
@@ -2103,7 +2098,8 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                     status = postResponse.getStatusLine().getStatusCode();
 
                     responseHeaderMetadata = getResponseHeaderMetadata(postResponse);
-                    
+                    this.lastResponseHeaderMetadata = responseHeaderMetadata;
+
                     // GetFeedSubmissionResult and GetReport will be the only MWS API functions that will stream
                     // server responses.
                     boolean isStreamingResponse = (request instanceof GetFeedSubmissionResultRequest || request instanceof GetReportRequest); 
@@ -3278,6 +3274,8 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
-                                                                                                                                                
+
+    public ResponseHeaderMetadata getLastResponseHeaderMetadata() {
+        return lastResponseHeaderMetadata;
+    }
 }
