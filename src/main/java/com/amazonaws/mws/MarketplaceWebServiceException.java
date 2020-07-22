@@ -53,6 +53,7 @@ public class MarketplaceWebServiceException extends Exception {
      *          Overview of error
      * @param statusCode
      *          HTTP status code for error response
+     * @param metadata {@link ResponseHeaderMetadata}
      */
     public MarketplaceWebServiceException(String message, int statusCode, ResponseHeaderMetadata metadata) {
         this.message = message;
@@ -105,6 +106,7 @@ public class MarketplaceWebServiceException extends Exception {
      *          Request ID returned by the service
      * @param xml
      *          Compete xml found in response
+     * @param metadata {@link ResponseHeaderMetadata}
      */
     public MarketplaceWebServiceException(String message, int statusCode, String errorCode, String errorType, String requestId,  String xml, ResponseHeaderMetadata metadata) {
         

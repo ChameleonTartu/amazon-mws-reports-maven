@@ -7,24 +7,25 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for FeedProcessingStatus.
+ * <p>Java class for FeedProcessingStatus.</p>
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
  * <pre>
- * &lt;simpleType name="FeedProcessingStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="_UNKNOWN_"/>
- *     &lt;enumeration value="_UNCONFIRMED_"/>
- *     &lt;enumeration value="_SUBMITTED_"/>
- *     &lt;enumeration value="_IN_PROGRESS_"/>
- *     &lt;enumeration value="_CANCELLED_"/>
- *     &lt;enumeration value="_DONE_"/>
- *     &lt;enumeration value="_IN_SAFETY_NET_"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * {@code
+ * <simpleType name="FeedProcessingStatus">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="_UNKNOWN_"/>
+ *     <enumeration value="_UNCONFIRMED_"/>
+ *     <enumeration value="_SUBMITTED_"/>
+ *     <enumeration value="_IN_PROGRESS_"/>
+ *     <enumeration value="_CANCELLED_"/>
+ *     <enumeration value="_DONE_"/>
+ *     <enumeration value="_IN_SAFETY_NET_"/>
+ *   </restriction>
+ * </simpleType>
+ * }
  * </pre>
- * 
  */
 @XmlType(name = "FeedProcessingStatus")
 @XmlEnum

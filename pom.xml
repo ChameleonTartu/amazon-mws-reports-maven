@@ -8,6 +8,7 @@
 	<packaging>jar</packaging>
 	<name>Amazon MWS :: Reports</name>
 	<description>Amazon MWS Reports API Client Library</description>
+	<url>https://github.com/ChameleonTartu/amazon-mws-reports-maven</url>
 
 	<licenses>
 		<license>
@@ -42,10 +43,6 @@
 		<developerConnection>scm:git:git@github.com:ChameleonTartu/amazon-mws-orders-maven.git</developerConnection>
 		<url>https://github.com/ChameleonTartu/amazon-mws-reports-maven/tree/master</url>
 	</scm>
-
-	<prerequisites>
-		<maven>3.0.2</maven>
-	</prerequisites>
 
 	<properties>
 		<!-- Unify the encoding for all modules -->
@@ -195,7 +192,6 @@
 						<source>${jdk.version}</source>
 						<quiet>true</quiet>
 						<detectOfflineLinks>false</detectOfflineLinks>
-						<javadocVersion>1.8</javadocVersion>
 						<encoding>${project.build.sourceEncoding}</encoding>
 					</configuration>
 				</plugin>
@@ -237,9 +233,6 @@
 						<goals>
 							<goal>jar</goal>
 						</goals>
-						<configuration>
-							<doclint>none</doclint>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -321,6 +314,9 @@
 								<goals>
 									<goal>sign</goal>
 								</goals>
+								<configuration>
+									<skip>true</skip>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>

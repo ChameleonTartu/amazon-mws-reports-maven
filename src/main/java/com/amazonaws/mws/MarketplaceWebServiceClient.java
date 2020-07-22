@@ -206,6 +206,10 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          AWS Access Key ID
      * @param awsSecretAccessKey
      *          AWS Secret Access Key
+     * @param applicationName
+     *          Application Name
+     * @param applicationVersion
+     *          Application Version
      */
     public  MarketplaceWebServiceClient(
         	String awsAccessKeyId,
@@ -225,6 +229,10 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          AWS Access Key ID
      * @param awsSecretAccessKey
      *          AWS Secret Access Key
+     * @param applicationName
+     *          Application name
+     * @param applicationVersion
+     *          Application version
      * @param maxAsyncThreads
      *          Max number of threads to spawn for async operation.
      */
@@ -250,6 +258,10 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          AWS Access Key ID
      * @param awsSecretAccessKey
      *          AWS Secret Access Key
+     * @param applicationName
+     *          Application name
+     * @param applicationVersion
+     *          Application version
      * @param config
      *          Additional configuration options
      */
@@ -306,7 +318,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * Get Report 
      *
      * The GetReport operation returns the contents of a report. Reports can potentially be
-     * very large (>100MB) which is why we only return one report at a time, and in a
+     * very large (&gt;100MB) which is why we only return one report at a time, and in a
      * streaming fashion.
      * 
      * @param request
@@ -314,7 +326,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReport Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportResponse getReport(GetReportRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportResponse.class, convertGetReport(request), request);
@@ -322,28 +334,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetReportResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportResponse>> responses = new ArrayList<Future<GetReportResponse>>();
      *  for (GetReportRequest request : requests) {
      *      responses.add(client.getReportAsync(request));
      *  }
-     *  for (Future&lt;GetReportResponse&gt; future : responses) {
+     *  for (Future<GetReportResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -359,11 +371,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          GetReportRequest request
-     * @return Future&lt;GetReportResponse&gt; future pointer to GetReportResponse
+     * @return {@code Future<GetReportResponse>} future pointer to {@link GetReportResponse}
      * 
      */
     public Future<GetReportResponse> getReportAsync(final GetReportRequest request) {
@@ -386,7 +399,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportScheduleCount Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportScheduleCountResponse getReportScheduleCount(GetReportScheduleCountRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportScheduleCountResponse.class, convertGetReportScheduleCount(request));
@@ -394,28 +407,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report Schedule Count 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportScheduleCountResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportScheduleCountResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetReportScheduleCountResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportScheduleCountResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportScheduleCountResponse>> responses = new ArrayList<Future<GetReportScheduleCountResponse>>();
      *  for (GetReportScheduleCountRequest request : requests) {
      *      responses.add(client.getReportScheduleCountAsync(request));
      *  }
-     *  for (Future&lt;GetReportScheduleCountResponse&gt; future : responses) {
+     *  for (Future<GetReportScheduleCountResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -431,11 +444,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          GetReportScheduleCountRequest request
-     * @return Future&lt;GetReportScheduleCountResponse&gt; future pointer to GetReportScheduleCountResponse
+     * @return {@code Future<GetReportScheduleCountResponse>} future pointer to {@link GetReportScheduleCountResponse}
      * 
      */
     public Future<GetReportScheduleCountResponse> getReportScheduleCountAsync(final GetReportScheduleCountRequest request) {
@@ -458,7 +472,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportRequestListByNextToken Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportRequestListByNextTokenResponse getReportRequestListByNextToken(GetReportRequestListByNextTokenRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportRequestListByNextTokenResponse.class, convertGetReportRequestListByNextToken(request));
@@ -466,28 +480,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report Request List By Next Token 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportRequestListByNextTokenResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportRequestListByNextTokenResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetReportRequestListByNextTokenResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportRequestListByNextTokenResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportRequestListByNextTokenResponse>> responses = new ArrayList<Future<GetReportRequestListByNextTokenResponse>>();
      *  for (GetReportRequestListByNextTokenRequest request : requests) {
      *      responses.add(client.getReportRequestListByNextTokenAsync(request));
      *  }
-     *  for (Future&lt;GetReportRequestListByNextTokenResponse&gt; future : responses) {
+     *  for (Future<GetReportRequestListByNextTokenResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -503,11 +517,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          GetReportRequestListByNextTokenRequest request
-     * @return Future&lt;GetReportRequestListByNextTokenResponse&gt; future pointer to GetReportRequestListByNextTokenResponse
+     * @return {@code Future<GetReportRequestListByNextTokenResponse>} future pointer to {@link GetReportRequestListByNextTokenResponse}
      * 
      */
     public Future<GetReportRequestListByNextTokenResponse> getReportRequestListByNextTokenAsync(final GetReportRequestListByNextTokenRequest request) {
@@ -530,7 +545,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          UpdateReportAcknowledgements Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public UpdateReportAcknowledgementsResponse updateReportAcknowledgements(UpdateReportAcknowledgementsRequest request) throws MarketplaceWebServiceException {
         return invoke(UpdateReportAcknowledgementsResponse.class, convertUpdateReportAcknowledgements(request));
@@ -538,28 +553,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Update Report Acknowledgements 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to UpdateReportAcknowledgementsResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return UpdateReportAcknowledgementsResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;UpdateReportAcknowledgementsResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;UpdateReportAcknowledgementsResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<UpdateReportAcknowledgementsResponse>> responses = new ArrayList<Future<UpdateReportAcknowledgementsResponse>>();
      *  for (UpdateReportAcknowledgementsRequest request : requests) {
      *      responses.add(client.updateReportAcknowledgementsAsync(request));
      *  }
-     *  for (Future&lt;UpdateReportAcknowledgementsResponse&gt; future : responses) {
+     *  for (Future<UpdateReportAcknowledgementsResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -575,12 +590,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          UpdateReportAcknowledgementsRequest request
-     * @return Future&lt;UpdateReportAcknowledgementsResponse&gt; future pointer to UpdateReportAcknowledgementsResponse
-     * 
+     * @return {@code Future<UpdateReportAcknowledgementsResponse>} future pointer to {@link UpdateReportAcknowledgementsResponse}
      */
     public Future<UpdateReportAcknowledgementsResponse> updateReportAcknowledgementsAsync(final UpdateReportAcknowledgementsRequest request) {
         Future<UpdateReportAcknowledgementsResponse> response = asyncExecutor.submit(new Callable<UpdateReportAcknowledgementsResponse>() {
@@ -606,7 +621,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          SubmitFeed Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public SubmitFeedResponse submitFeed(SubmitFeedRequest request) throws MarketplaceWebServiceException {
         return invoke(SubmitFeedResponse.class, convertSubmitFeed(request), request);
@@ -615,28 +630,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Submit Feed 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to SubmitFeedResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return SubmitFeedResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;SubmitFeedResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;SubmitFeedResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<SubmitFeedResponse>> responses = new ArrayList<Future<SubmitFeedResponse>>();
      *  for (SubmitFeedRequest request : requests) {
      *      responses.add(client.submitFeedAsync(request));
      *  }
-     *  for (Future&lt;SubmitFeedResponse&gt; future : responses) {
+     *  for (Future<SubmitFeedResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -652,11 +667,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          SubmitFeedRequest request
-     * @return Future&lt;SubmitFeedResponse&gt; future pointer to SubmitFeedResponse
+     * @return {@code Future<SubmitFeedResponse>} future pointer to {@link SubmitFeedResponse}
      * 
      */
     public Future<SubmitFeedResponse> submitFeedAsync(final SubmitFeedRequest request) {
@@ -688,7 +704,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          SubmitFeed Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public SubmitFeedResponse submitFeedFromFile( SubmitFeedRequest request )
       throws MarketplaceWebServiceException {
@@ -706,28 +722,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     
     /**
      * Non-blocking Submit Feed From File 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to SubmitFeedResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return SubmitFeedResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;SubmitFeedResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;SubmitFeedResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<SubmitFeedResponse>> responses = new ArrayList<Future<SubmitFeedResponse>>();
      *  for (SubmitFeedRequest request : requests) {
      *      responses.add(client.submitFeedFromFileAsync(request));
      *  }
-     *  for (Future&lt;SubmitFeedResponse&gt; future : responses) {
+     *  for (Future<SubmitFeedResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -743,11 +759,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          SubmitFeedRequest request
-     * @return Future&lt;SubmitFeedResponse&gt; future pointer to SubmitFeedResponse
+     * @return {@code Future<SubmitFeedResponse>} future pointer to {@link SubmitFeedResponse}
      * 
      */
     public Future<SubmitFeedResponse> submitFeedFromFileAsync(final SubmitFeedRequest request) {
@@ -772,7 +789,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportCount Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportCountResponse getReportCount(GetReportCountRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportCountResponse.class, convertGetReportCount(request));
@@ -780,28 +797,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report Count 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportCountResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportCountResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetReportCountResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportCountResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportCountResponse>> responses = new ArrayList<Future<GetReportCountResponse>>();
      *  for (GetReportCountRequest request : requests) {
      *      responses.add(client.getReportCountAsync(request));
      *  }
-     *  for (Future&lt;GetReportCountResponse&gt; future : responses) {
+     *  for (Future<GetReportCountResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -817,11 +834,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          GetReportCountRequest request
-     * @return Future&lt;GetReportCountResponse&gt; future pointer to GetReportCountResponse
+     * @return {@code Future<GetReportCountResponse>} future pointer to {@link GetReportCountResponse}
      * 
      */
     public Future<GetReportCountResponse> getReportCountAsync(final GetReportCountRequest request) {
@@ -844,7 +862,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetFeedSubmissionListByNextToken Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetFeedSubmissionListByNextTokenResponse getFeedSubmissionListByNextToken(GetFeedSubmissionListByNextTokenRequest request) throws MarketplaceWebServiceException {
         return invoke(GetFeedSubmissionListByNextTokenResponse.class, convertGetFeedSubmissionListByNextToken(request));
@@ -852,28 +870,27 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Feed Submission List By Next Token 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetFeedSubmissionListByNextTokenResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetFeedSubmissionListByNextTokenResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
-     * <pre>
-     *
-     *  List&lt;Future&lt;GetFeedSubmissionListByNextTokenResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetFeedSubmissionListByNextTokenResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetFeedSubmissionListByNextTokenResponse>> responses = new ArrayList<Future<GetFeedSubmissionListByNextTokenResponse>>();
      *  for (GetFeedSubmissionListByNextTokenRequest request : requests) {
      *      responses.add(client.getFeedSubmissionListByNextTokenAsync(request));
      *  }
-     *  for (Future&lt;GetFeedSubmissionListByNextTokenResponse&gt; future : responses) {
+     *  for (Future<GetFeedSubmissionListByNextTokenResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -888,12 +905,11 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
-     * </pre>
+     *  }}
      *
      * @param request
      *          GetFeedSubmissionListByNextTokenRequest request
-     * @return Future&lt;GetFeedSubmissionListByNextTokenResponse&gt; future pointer to GetFeedSubmissionListByNextTokenResponse
+     * @return {@code Future<GetFeedSubmissionListByNextTokenResponse>} future pointer to {@link GetFeedSubmissionListByNextTokenResponse}
      * 
      */
     public Future<GetFeedSubmissionListByNextTokenResponse> getFeedSubmissionListByNextTokenAsync(final GetFeedSubmissionListByNextTokenRequest request) {
@@ -917,7 +933,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          CancelFeedSubmissions Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public CancelFeedSubmissionsResponse cancelFeedSubmissions(CancelFeedSubmissionsRequest request) throws MarketplaceWebServiceException {
         return invoke(CancelFeedSubmissionsResponse.class, convertCancelFeedSubmissions(request));
@@ -925,28 +941,29 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Cancel Feed Submissions 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to CancelFeedSubmissionsResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return CancelFeedSubmissionsResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
-     *  List&lt;Future&lt;CancelFeedSubmissionsResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;CancelFeedSubmissionsResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<CancelFeedSubmissionsResponse>> responses = new ArrayList<Future<CancelFeedSubmissionsResponse>>();
      *  for (CancelFeedSubmissionsRequest request : requests) {
      *      responses.add(client.cancelFeedSubmissionsAsync(request));
      *  }
-     *  for (Future&lt;CancelFeedSubmissionsResponse&gt; future : responses) {
+     *  for (Future<CancelFeedSubmissionsResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -961,13 +978,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          CancelFeedSubmissionsRequest request
-     * @return Future&lt;CancelFeedSubmissionsResponse&gt; future pointer to CancelFeedSubmissionsResponse
-     * 
+     * @return {@code Future<CancelFeedSubmissionsResponse>} future pointer to {@link CancelFeedSubmissionsResponse}
      */
     public Future<CancelFeedSubmissionsResponse> cancelFeedSubmissionsAsync(final CancelFeedSubmissionsRequest request) {
         Future<CancelFeedSubmissionsResponse> response = asyncExecutor.submit(new Callable<CancelFeedSubmissionsResponse>() {
@@ -989,7 +1005,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          RequestReport Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public RequestReportResponse requestReport(RequestReportRequest request) throws MarketplaceWebServiceException {
         return invoke(RequestReportResponse.class, convertRequestReport(request));
@@ -997,28 +1013,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Request Report 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to RequestReportResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return RequestReportResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;RequestReportResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;RequestReportResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<RequestReportResponse>> responses = new ArrayList<Future<RequestReportResponse>>();
      *  for (RequestReportRequest request : requests) {
      *      responses.add(client.requestReportAsync(request));
      *  }
-     *  for (Future&lt;RequestReportResponse&gt; future : responses) {
+     *  for (Future<RequestReportResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1033,13 +1049,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          RequestReportRequest request
-     * @return Future&lt;RequestReportResponse&gt; future pointer to RequestReportResponse
-     * 
+     * @return {@code Future<RequestReportResponse>} future pointer to {@link RequestReportResponse}
      */
     public Future<RequestReportResponse> requestReportAsync(final RequestReportRequest request) {
         Future<RequestReportResponse> response = asyncExecutor.submit(new Callable<RequestReportResponse>() {
@@ -1061,7 +1076,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetFeedSubmissionCount Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetFeedSubmissionCountResponse getFeedSubmissionCount(GetFeedSubmissionCountRequest request) throws MarketplaceWebServiceException {
         return invoke(GetFeedSubmissionCountResponse.class, convertGetFeedSubmissionCount(request));
@@ -1069,28 +1084,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Feed Submission Count 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetFeedSubmissionCountResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetFeedSubmissionCountResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
-     * If service error has occured, MarketplaceWebServiceException can be extracted with
+     * 
+     * If service error has occurred, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetFeedSubmissionCountResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetFeedSubmissionCountResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetFeedSubmissionCountResponse>> responses = new ArrayList<Future<GetFeedSubmissionCountResponse>>();
      *  for (GetFeedSubmissionCountRequest request : requests) {
      *      responses.add(client.getFeedSubmissionCountAsync(request));
      *  }
-     *  for (Future&lt;GetFeedSubmissionCountResponse&gt; future : responses) {
+     *  for (Future<GetFeedSubmissionCountResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1105,12 +1120,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          GetFeedSubmissionCountRequest request
-     * @return Future&lt;GetFeedSubmissionCountResponse&gt; future pointer to GetFeedSubmissionCountResponse
+     * @return {@code Future<GetFeedSubmissionCountResponse>} future pointer to {@link GetFeedSubmissionCountResponse}
      * 
      */
     public Future<GetFeedSubmissionCountResponse> getFeedSubmissionCountAsync(final GetFeedSubmissionCountRequest request) {
@@ -1134,7 +1149,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          CancelReportRequests Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public CancelReportRequestsResponse cancelReportRequests(CancelReportRequestsRequest request) throws MarketplaceWebServiceException {
         return invoke(CancelReportRequestsResponse.class, convertCancelReportRequests(request));
@@ -1142,28 +1157,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Cancel Report Requests 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to CancelReportRequestsResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return CancelReportRequestsResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;CancelReportRequestsResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;CancelReportRequestsResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<CancelReportRequestsResponse>> responses = new ArrayList<Future<CancelReportRequestsResponse>>();
      *  for (CancelReportRequestsRequest request : requests) {
      *      responses.add(client.cancelReportRequestsAsync(request));
      *  }
-     *  for (Future&lt;CancelReportRequestsResponse&gt; future : responses) {
+     *  for (Future<CancelReportRequestsResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1178,12 +1193,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          CancelReportRequestsRequest request
-     * @return Future&lt;CancelReportRequestsResponse&gt; future pointer to CancelReportRequestsResponse
+     * @return {@code Future<CancelReportRequestsResponse>} future pointer to {@link CancelReportRequestsResponse}
      * 
      */
     public Future<CancelReportRequestsResponse> cancelReportRequestsAsync(final CancelReportRequestsRequest request) {
@@ -1207,7 +1222,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportList Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportListResponse getReportList(GetReportListRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportListResponse.class, convertGetReportList(request));
@@ -1215,28 +1230,29 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report List 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportListResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportListResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
-     *  List&lt;Future&lt;GetReportListResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportListResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportListResponse>> responses = new ArrayList<Future<GetReportListResponse>>();
      *  for (GetReportListRequest request : requests) {
      *      responses.add(client.getReportListAsync(request));
      *  }
-     *  for (Future&lt;GetReportListResponse&gt; future : responses) {
+     *  for (Future<GetReportListResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1251,12 +1267,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          GetReportListRequest request
-     * @return Future&lt;GetReportListResponse&gt; future pointer to GetReportListResponse
+     * @return {@code Future<GetReportListResponse>} future pointer to {@link GetReportListResponse}
      * 
      */
     public Future<GetReportListResponse> getReportListAsync(final GetReportListRequest request) {
@@ -1279,7 +1295,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetFeedSubmissionResult Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetFeedSubmissionResultResponse getFeedSubmissionResult(GetFeedSubmissionResultRequest request) throws MarketplaceWebServiceException {
         return invoke(GetFeedSubmissionResultResponse.class, convertGetFeedSubmissionResult(request), request);
@@ -1287,28 +1303,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Feed Submission Result 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetFeedSubmissionResultResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetFeedSubmissionResultResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetFeedSubmissionResultResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetFeedSubmissionResultResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetFeedSubmissionResultResponse>> responses = new ArrayList<Future<GetFeedSubmissionResultResponse>>();
      *  for (GetFeedSubmissionResultRequest request : requests) {
      *      responses.add(client.getFeedSubmissionResultAsync(request));
      *  }
-     *  for (Future&lt;GetFeedSubmissionResultResponse&gt; future : responses) {
+     *  for (Future<GetFeedSubmissionResultResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1324,11 +1340,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          GetFeedSubmissionResultRequest request
-     * @return Future&lt;GetFeedSubmissionResultResponse&gt; future pointer to GetFeedSubmissionResultResponse
+     * @return {@code Future<GetFeedSubmissionResultResponse>} future pointer to {@link GetFeedSubmissionResultResponse}
      * 
      */
     public Future<GetFeedSubmissionResultResponse> getFeedSubmissionResultAsync(final GetFeedSubmissionResultRequest request) {
@@ -1351,7 +1368,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetFeedSubmissionList Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetFeedSubmissionListResponse getFeedSubmissionList(GetFeedSubmissionListRequest request) throws MarketplaceWebServiceException {
         return invoke(GetFeedSubmissionListResponse.class, convertGetFeedSubmissionList(request));
@@ -1359,28 +1376,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Feed Submission List 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetFeedSubmissionListResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetFeedSubmissionListResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetFeedSubmissionListResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetFeedSubmissionListResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetFeedSubmissionListResponse>> responses = new ArrayList<Future<GetFeedSubmissionListResponse>>();
      *  for (GetFeedSubmissionListRequest request : requests) {
      *      responses.add(client.getFeedSubmissionListAsync(request));
      *  }
-     *  for (Future&lt;GetFeedSubmissionListResponse&gt; future : responses) {
+     *  for (Future<GetFeedSubmissionListResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1395,12 +1412,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          GetFeedSubmissionListRequest request
-     * @return Future&lt;GetFeedSubmissionListResponse&gt; future pointer to GetFeedSubmissionListResponse
+     * @return {@code Future<GetFeedSubmissionListResponse>} future pointer to {@link GetFeedSubmissionListResponse}
      * 
      */
     public Future<GetFeedSubmissionListResponse> getFeedSubmissionListAsync(final GetFeedSubmissionListRequest request) {
@@ -1423,7 +1440,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportRequestList Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportRequestListResponse getReportRequestList(GetReportRequestListRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportRequestListResponse.class, convertGetReportRequestList(request));
@@ -1431,28 +1448,29 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report Request List 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportRequestListResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportRequestListResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
-     *  List&lt;Future&lt;GetReportRequestListResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportRequestListResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportRequestListResponse>> responses = new ArrayList<Future<GetReportRequestListResponse>>();
      *  for (GetReportRequestListRequest request : requests) {
      *      responses.add(client.getReportRequestListAsync(request));
      *  }
-     *  for (Future&lt;GetReportRequestListResponse&gt; future : responses) {
+     *  for (Future<GetReportRequestListResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1467,12 +1485,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          GetReportRequestListRequest request
-     * @return Future&lt;GetReportRequestListResponse&gt; future pointer to GetReportRequestListResponse
+     * @return {@code Future<GetReportRequestListResponse>} future pointer to {@link GetReportRequestListResponse}
      * 
      */
     public Future<GetReportRequestListResponse> getReportRequestListAsync(final GetReportRequestListRequest request) {
@@ -1495,7 +1513,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportScheduleListByNextToken Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportScheduleListByNextTokenResponse getReportScheduleListByNextToken(GetReportScheduleListByNextTokenRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportScheduleListByNextTokenResponse.class, convertGetReportScheduleListByNextToken(request));
@@ -1503,28 +1521,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report Schedule List By Next Token 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportScheduleListByNextTokenResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportScheduleListByNextTokenResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetReportScheduleListByNextTokenResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportScheduleListByNextTokenResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportScheduleListByNextTokenResponse>> responses = new ArrayList<Future<GetReportScheduleListByNextTokenResponse>>();
      *  for (GetReportScheduleListByNextTokenRequest request : requests) {
      *      responses.add(client.getReportScheduleListByNextTokenAsync(request));
      *  }
-     *  for (Future&lt;GetReportScheduleListByNextTokenResponse&gt; future : responses) {
+     *  for (Future<GetReportScheduleListByNextTokenResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1539,12 +1557,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          GetReportScheduleListByNextTokenRequest request
-     * @return Future&lt;GetReportScheduleListByNextTokenResponse&gt; future pointer to GetReportScheduleListByNextTokenResponse
+     * @return {@code Future<GetReportScheduleListByNextTokenResponse>} future pointer to {@link GetReportScheduleListByNextTokenResponse}
      * 
      */
     public Future<GetReportScheduleListByNextTokenResponse> getReportScheduleListByNextTokenAsync(final GetReportScheduleListByNextTokenRequest request) {
@@ -1567,7 +1585,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportListByNextToken Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportListByNextTokenResponse getReportListByNextToken(GetReportListByNextTokenRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportListByNextTokenResponse.class, convertGetReportListByNextToken(request));
@@ -1575,28 +1593,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report List By Next Token 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportListByNextTokenResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportListByNextTokenResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetReportListByNextTokenResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportListByNextTokenResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportListByNextTokenResponse>> responses = new ArrayList<Future<GetReportListByNextTokenResponse>>();
      *  for (GetReportListByNextTokenRequest request : requests) {
      *      responses.add(client.getReportListByNextTokenAsync(request));
      *  }
-     *  for (Future&lt;GetReportListByNextTokenResponse&gt; future : responses) {
+     *  for (Future<GetReportListByNextTokenResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1611,12 +1629,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          GetReportListByNextTokenRequest request
-     * @return Future&lt;GetReportListByNextTokenResponse&gt; future pointer to GetReportListByNextTokenResponse
+     * @return {@code Future<GetReportListByNextTokenResponse>} future pointer to {@link GetReportListByNextTokenResponse}
      * 
      */
     public Future<GetReportListByNextTokenResponse> getReportListByNextTokenAsync(final GetReportListByNextTokenRequest request) {
@@ -1640,7 +1658,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          ManageReportSchedule Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public ManageReportScheduleResponse manageReportSchedule(ManageReportScheduleRequest request) throws MarketplaceWebServiceException {
         return invoke(ManageReportScheduleResponse.class, convertManageReportSchedule(request));
@@ -1648,28 +1666,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Manage Report Schedule 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to ManageReportScheduleResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return ManageReportScheduleResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
-     * If service error has occured, MarketplaceWebServiceException can be extracted with
+     * 
+     * If service error has occurred, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;ManageReportScheduleResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;ManageReportScheduleResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<ManageReportScheduleResponse>> responses = new ArrayList<Future<ManageReportScheduleResponse>>();
      *  for (ManageReportScheduleRequest request : requests) {
      *      responses.add(client.manageReportScheduleAsync(request));
      *  }
-     *  for (Future&lt;ManageReportScheduleResponse&gt; future : responses) {
+     *  for (Future<ManageReportScheduleResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1684,12 +1702,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          // handle other exceptions
      *          }
      *      }
-     *  }
+     *  }}
      * </pre>
      *
      * @param request
      *          ManageReportScheduleRequest request
-     * @return Future&lt;ManageReportScheduleResponse&gt; future pointer to ManageReportScheduleResponse
+     * @return {@code Future<ManageReportScheduleResponse>} future pointer to {@link ManageReportScheduleResponse}
      * 
      */
     public Future<ManageReportScheduleResponse> manageReportScheduleAsync(final ManageReportScheduleRequest request) {
@@ -1713,7 +1731,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportRequestCount Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportRequestCountResponse getReportRequestCount(GetReportRequestCountRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportRequestCountResponse.class, convertGetReportRequestCount(request));
@@ -1721,28 +1739,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report Request Count 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportRequestCountResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportRequestCountResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetReportRequestCountResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportRequestCountResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportRequestCountResponse>> responses = new ArrayList<Future<GetReportRequestCountResponse>>();
      *  for (GetReportRequestCountRequest request : requests) {
      *      responses.add(client.getReportRequestCountAsync(request));
      *  }
-     *  for (Future&lt;GetReportRequestCountResponse&gt; future : responses) {
+     *  for (Future<GetReportRequestCountResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1758,12 +1776,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          GetReportRequestCountRequest request
-     * @return Future&lt;GetReportRequestCountResponse&gt; future pointer to GetReportRequestCountResponse
-     * 
+     * @return {@code Future<GetReportRequestCountResponse>} future pointer to {@link GetReportRequestCountResponse}
      */
     public Future<GetReportRequestCountResponse> getReportRequestCountAsync(final GetReportRequestCountRequest request) {
         Future<GetReportRequestCountResponse> response = asyncExecutor.submit(new Callable<GetReportRequestCountResponse>() {
@@ -1785,7 +1803,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @return
      *          GetReportScheduleList Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportScheduleListResponse getReportScheduleList(GetReportScheduleListRequest request) throws MarketplaceWebServiceException {
         return invoke(GetReportScheduleListResponse.class, convertGetReportScheduleList(request));
@@ -1793,28 +1811,28 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     /**
      * Non-blocking Get Report Schedule List 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportScheduleListResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportScheduleListResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
-     *
-     *  List&lt;Future&lt;GetReportScheduleListResponse&gt;&gt; responses = new ArrayList&lt;Future&lt;GetReportScheduleListResponse&gt;&gt;();
+     *  {@code
+     *  List<Future<GetReportScheduleListResponse>> responses = new ArrayList<Future<GetReportScheduleListResponse>>();
      *  for (GetReportScheduleListRequest request : requests) {
      *      responses.add(client.getReportScheduleListAsync(request));
      *  }
-     *  for (Future&lt;GetReportScheduleListResponse&gt; future : responses) {
+     *  for (Future<GetReportScheduleListResponse> future : responses) {
      *      while (!future.isDone()) {
      *          Thread.yield();
      *      }
@@ -1830,11 +1848,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          }
      *      }
      *  }
+     *  }
      * </pre>
      *
      * @param request
      *          GetReportScheduleListRequest request
-     * @return Future&lt;GetReportScheduleListResponse&gt; future pointer to GetReportScheduleListResponse
+     * @return {@code Future<GetReportScheduleListResponse>} future pointer to {@link GetReportScheduleListResponse}
      * 
      */
     public Future<GetReportScheduleListResponse> getReportScheduleListAsync(final GetReportScheduleListRequest request) {

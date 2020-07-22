@@ -1,6 +1,6 @@
 package com.amazonaws.mws.model;
 
-/*
+/**
  * Enumeration of valid content types for a feed submission.
  */
 public enum ContentType {

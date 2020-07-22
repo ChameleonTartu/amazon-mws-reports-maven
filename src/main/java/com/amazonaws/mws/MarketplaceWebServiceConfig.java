@@ -181,8 +181,10 @@ public class MarketplaceWebServiceConfig {
     /**
      * Sets UserAgent property
      *
-     * @param userAgent User Agent String to use when sending request
-     *
+     * @param applicationName {@link String}
+     * @param applicationVersion {@link String}
+     * @param programmingLanguage {@link String}
+     * @param additionalNameValuePairs {@code String[]}
      */
     public void setUserAgent(
     		String applicationName, 
@@ -220,7 +222,10 @@ public class MarketplaceWebServiceConfig {
     /**
      * Sets UserAgent property and returns current MarketplaceWebServiceConfig
      *
-     * @param userAgent User Agent String to use when sending request
+     * @param applicationName {@link String}
+     * @param applicationVersion {@link String}
+     * @param programmingLanguage {@link String}
+     * @param additionalNameValuePairs {@code String[]}
      *
      * @return MarketplaceWebServiceConfig
      */
@@ -631,6 +636,7 @@ public class MarketplaceWebServiceConfig {
      * There is not a perfect combination of these two parameters, it will depend
      * on your particular environment. Experiment.
      *
+     * @return {@link MarketplaceWebServiceConfig}
      */
     public MarketplaceWebServiceConfig withMaxAsyncQueueSize(int maxAsyncQueueSize) {
         setMaxAsyncQueueSize(maxAsyncQueueSize);

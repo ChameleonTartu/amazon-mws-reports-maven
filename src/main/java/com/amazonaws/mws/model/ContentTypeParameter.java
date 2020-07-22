@@ -1,6 +1,6 @@
 package com.amazonaws.mws.model;
 
-/*
+/**
  * Interface for Content-Type parameters that are appended to the Content-Type;
  * e.g. "charset=utf-8".
  * 

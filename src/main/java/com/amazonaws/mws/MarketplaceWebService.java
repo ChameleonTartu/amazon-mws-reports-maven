@@ -31,14 +31,12 @@ import java.util.concurrent.Future;
  * 
  */
 public interface  MarketplaceWebService {
-    
 
-            
     /**
      * Get Report 
      *
      * The GetReport operation returns the contents of a report. Reports can potentially be
-     * very large (>100MB) which is why we only return one report at a time, and in a
+     * very large (&gt;100MB) which is why we only return one report at a time, and in a
      * streaming fashion.
      *   
      * @param request
@@ -46,26 +44,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReport Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportResponse getReport(GetReportRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -110,26 +108,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportScheduleCount Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportScheduleCountResponse getReportScheduleCount(GetReportScheduleCountRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Schedule Count 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportScheduleCountResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportScheduleCountResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -174,26 +172,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportRequestListByNextToken Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportRequestListByNextTokenResponse getReportRequestListByNextToken(GetReportRequestListByNextTokenRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Request List By Next Token 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportRequestListByNextTokenResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportRequestListByNextTokenResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -238,26 +236,26 @@ public interface  MarketplaceWebService {
      * @return
      *          UpdateReportAcknowledgements Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public UpdateReportAcknowledgementsResponse updateReportAcknowledgements(UpdateReportAcknowledgementsRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Update Report Acknowledgements 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to UpdateReportAcknowledgementsResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return UpdateReportAcknowledgementsResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -306,26 +304,26 @@ public interface  MarketplaceWebService {
      * @return
      *          SubmitFeed Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public SubmitFeedResponse submitFeed(SubmitFeedRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Submit Feed 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to SubmitFeedResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return SubmitFeedResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -372,26 +370,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportCount Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportCountResponse getReportCount(GetReportCountRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Count 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportCountResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportCountResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -436,26 +434,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetFeedSubmissionListByNextToken Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetFeedSubmissionListByNextTokenResponse getFeedSubmissionListByNextToken(GetFeedSubmissionListByNextTokenRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Feed Submission List By Next Token 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetFeedSubmissionListByNextTokenResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetFeedSubmissionListByNextTokenResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -501,26 +499,26 @@ public interface  MarketplaceWebService {
      * @return
      *          CancelFeedSubmissions Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public CancelFeedSubmissionsResponse cancelFeedSubmissions(CancelFeedSubmissionsRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Cancel Feed Submissions 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to CancelFeedSubmissionsResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return CancelFeedSubmissionsResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -565,26 +563,26 @@ public interface  MarketplaceWebService {
      * @return
      *          RequestReport Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public RequestReportResponse requestReport(RequestReportRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Request Report 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to RequestReportResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return RequestReportResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -629,26 +627,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetFeedSubmissionCount Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetFeedSubmissionCountResponse getFeedSubmissionCount(GetFeedSubmissionCountRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Feed Submission Count 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetFeedSubmissionCountResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetFeedSubmissionCountResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -694,26 +692,26 @@ public interface  MarketplaceWebService {
      * @return
      *          CancelReportRequests Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public CancelReportRequestsResponse cancelReportRequests(CancelReportRequestsRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Cancel Report Requests 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to CancelReportRequestsResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return CancelReportRequestsResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -759,26 +757,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportList Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportListResponse getReportList(GetReportListRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report List 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportListResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportListResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -823,26 +821,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetFeedSubmissionResult Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetFeedSubmissionResultResponse getFeedSubmissionResult(GetFeedSubmissionResultRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Feed Submission Result 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetFeedSubmissionResultResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetFeedSubmissionResultResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -887,26 +885,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetFeedSubmissionList Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetFeedSubmissionListResponse getFeedSubmissionList(GetFeedSubmissionListRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Feed Submission List 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetFeedSubmissionListResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetFeedSubmissionListResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -951,26 +949,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportRequestList Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportRequestListResponse getReportRequestList(GetReportRequestListRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Request List 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportRequestListResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportRequestListResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -1015,26 +1013,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportScheduleListByNextToken Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportScheduleListByNextTokenResponse getReportScheduleListByNextToken(GetReportScheduleListByNextTokenRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Schedule List By Next Token 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportScheduleListByNextTokenResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportScheduleListByNextTokenResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -1079,26 +1077,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportListByNextToken Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportListByNextTokenResponse getReportListByNextToken(GetReportListByNextTokenRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report List By Next Token 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportListByNextTokenResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportListByNextTokenResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -1144,26 +1142,26 @@ public interface  MarketplaceWebService {
      * @return
      *          ManageReportSchedule Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public ManageReportScheduleResponse manageReportSchedule(ManageReportScheduleRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Manage Report Schedule 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to ManageReportScheduleResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return ManageReportScheduleResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -1209,26 +1207,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportRequestCount Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportRequestCountResponse getReportRequestCount(GetReportRequestCountRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Request Count 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportRequestCountResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportRequestCountResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -1273,26 +1271,26 @@ public interface  MarketplaceWebService {
      * @return
      *          GetReportScheduleList Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public GetReportScheduleListResponse getReportScheduleList(GetReportScheduleListRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Schedule List 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to GetReportScheduleListResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return GetReportScheduleListResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
@@ -1344,27 +1342,27 @@ public interface  MarketplaceWebService {
      * @return
      *          SubmitFeed Response from the service
      *
-     * @throws MarketplaceWebServiceException
+     * @throws MarketplaceWebServiceException {@link MarketplaceWebServiceException}
      */
     public SubmitFeedResponse submitFeedFromFile( SubmitFeedRequest request )
       throws MarketplaceWebServiceException;
     
     /**
      * Non-blocking Submit Feed From File 
-     * <p/>
+     * 
      * Returns <code>future</code> pointer to SubmitFeedResponse
-     * <p/>
+     * 
      * If response is ready, call to <code>future.get()</code> 
      * will return SubmitFeedResponse. 
-     * <p/>
+     * 
      * If response is not ready, call to <code>future.get()</code> will block the 
      * calling thread until response is returned. 
-     * <p/>
+     * 
      * Note, <code>future.get()</code> will throw wrapped runtime exception. 
-     * <p/>
+     * 
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
-     * <p/>
+     * 
      * Usage example for parallel processing:
      * <pre>
      *
