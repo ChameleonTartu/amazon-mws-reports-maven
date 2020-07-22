@@ -38,9 +38,9 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:git@github.com:ChameleonTartu/ext-lib-amazon-mws-reports.git</connection>
-		<developerConnection>scm:git:git@github.com:ChameleonTartu/ext-lib-amazon-mws-orders.git</developerConnection>
-		<url>https://github.com/ChameleonTartu/ext-lib-amazon-mws-reports/tree/master</url>
+		<connection>scm:git:git@github.com:ChameleonTartu/amazon-mws-reports-maven.git</connection>
+		<developerConnection>scm:git:git@github.com:ChameleonTartu/amazon-mws-orders-maven.git</developerConnection>
+		<url>https://github.com/ChameleonTartu/amazon-mws-reports-maven/tree/master</url>
 	</scm>
 
 	<prerequisites>
@@ -102,20 +102,6 @@
 			<artifactId>httpcore</artifactId>
 			<version>${org-apache-httpcomponents-version}</version>
 		</dependency>
-
-		<!--
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-ri</artifactId>
-			<version>${com-sun-xml-bind-version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${org-apahe-logging-log4j-version}</version>
-		</dependency>
-		-->
 
 		<dependency>
 			<groupId>org.mockito</groupId>

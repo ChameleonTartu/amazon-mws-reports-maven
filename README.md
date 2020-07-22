@@ -23,8 +23,8 @@ Dependency itself:
 ```
 <dependency>
     <groupId>com.github.ChameleonTartu</groupId>
-    <artifactId>ext-lib-amazon-mws-reports</artifactId>
-    <version>v1.0.0</version>
+    <artifactId>amazon-mws-reports-maven</artifactId>
+    <version>v1.0.2</version>
 </dependency>
 ```
 
@@ -32,7 +32,7 @@ In case you want to have the latest updates you can specify `version` as `master
 ```
 <dependency>
     <groupId>com.github.chameleontartu</groupId>
-    <artifactId>ext-lib-amazon-mws-reports</artifactId>
+    <artifactId>amazon-mws-reports-maven</artifactId>
     <version>master-SNAPSHOT</version>
 </dependency>
 ```
