@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.chameleontartu</groupId>
 	<artifactId>amazon-mws-reports-maven</artifactId>
-	<version>1.0.4</version>
+	<version>1.1.0</version>
 	<packaging>jar</packaging>
 	<name>Amazon MWS :: Reports</name>
 	<description>Amazon MWS Reports API Client Library</description>
@@ -55,12 +55,7 @@
 		<jdk.version>1.6</jdk.version>
 		<compiler.fork>1.6</compiler.fork>
 
-		<!-- 
-		  Turning off doclint in JDK 8 Javadoc
-		- http://blog.joda.org/2014/02/turning-off-doclint-in-jdk-8-javadoc.html
-		-->
-		<additionalparam>-Xdoclint:none</additionalparam>
-
+		<!-- Dependencies -->
 		<maven-bundle-version>2.3.7</maven-bundle-version>
 		<commons-codec-version>1.14</commons-codec-version>
 		<commons-httpclient-version>3.1</commons-httpclient-version>
