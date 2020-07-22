@@ -15,7 +15,8 @@ jobs:
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
       - name: Publish package
-        run: mvn -B deploy
+        # Ignore JavaDoc as they are exactly as they were in native MWS Reports package
+        run: mvn -DskipTests=true -Dmaven.javadoc.skip=true -B deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
