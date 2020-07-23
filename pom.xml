@@ -45,6 +45,8 @@
 	</scm>
 
 	<properties>
+		<gpg.keyname>4E6EAFF03AFE4993A6DAE1509A6F8563B392C9A1</gpg.keyname>
+
 		<!-- Unify the encoding for all modules -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -314,6 +316,13 @@
 								<goals>
 									<goal>sign</goal>
 								</goals>
+								<configuration>
+									<!-- This is necessary for gpg to not try to use the pinentry programs -->
+									<gpgArguments>
+										<arg>--pinentry-mode</arg>
+										<arg>loopback</arg>
+									</gpgArguments>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>
