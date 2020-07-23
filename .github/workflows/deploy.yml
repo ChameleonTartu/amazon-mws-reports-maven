@@ -16,7 +16,7 @@ jobs:
           server-password: MAVEN_PASSWORD
       - name: Publish package
         # Ignore JavaDoc as they are exactly as they were in native MWS Reports package
-        run: mvn clean package -B deploy -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }}
+        run: mvn clean gpg:sign -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} package -B deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
