@@ -14,6 +14,12 @@ jobs:
           server-id: ossrh
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
+      - name: Create Key File
+        run: echo "$GPG_PRIVATE_KEY" > private.key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      - name: Import GPG Key
+        run: gpg --import --batch private.key
       - name: Cache
         uses: actions/cache@v1
         with:
@@ -21,17 +27,6 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-
-      - name: Recv Key
-        env:
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys $GPG_PUBLIC_KEY
-
-      - name: List Key
-        env:
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: gpg --list-keys
-
       - if: github.event.release
         name: Update version in pom.xml (Release only)
         run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
@@ -39,7 +34,7 @@ jobs:
         run: mvn -B clean install
       - name: Publish package
         run: |-
-          mvn -B deploy -DskiptTests=true -Dgpg.passphrase="${GPG_PASSPHRASE}" --Dgpg.keyname="${GPG_KEYNAME}"
+          mvn -B deploy -Dgpg.passphrase="$GPG_PASSPHRASE"
         env:
           GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
@@ -47,4 +42,6 @@ jobs:
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
 
 
-# Examples are taken from: https://github.com/camunda/camunda-bpm-mockito/blob/465b4f5f2f29806a1a855e7cabf918b633df1075/.github/workflows/deploy.yml
+# Examples are taken from
+# - https://github.com/camunda/camunda-bpm-mockito/blob/465b4f5f2f29806a1a855e7cabf918b633df1075/.github/workflows/deploy.yml
+# - https://github.com/see-es-vee/see-es-vee/blob/43bec4ef0005caa9b30cf11bf10efe03bd517733/.github/workflows/mavenpublish.yml
