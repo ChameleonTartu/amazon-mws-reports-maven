@@ -15,12 +15,12 @@ jobs:
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
       - name: Cache
-          uses: actions/cache@v1
-          with:
-            path: ~/.m2/repository
-            key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-            restore-keys: |
-              ${{ runner.os }}-maven-
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
       - if: github.event.release
         name: Update version in pom.xml (Release only)
         run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
