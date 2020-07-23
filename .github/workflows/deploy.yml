@@ -25,7 +25,7 @@ jobs:
       - name: Recv Key
         env:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-          run: gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys ${env:GPG_PUBLIC_KEY}
+        run: gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys ${env:GPG_PUBLIC_KEY}
 
       - name: List Key
         env:
