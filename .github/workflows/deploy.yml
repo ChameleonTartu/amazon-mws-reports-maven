@@ -20,7 +20,7 @@ jobs:
           - mvn clean package promote:make-promotable
           - mvn javadoc:jar promote:make-promotable
           - mvn source:jar promote:make-promotable
-          - mvn -B deploy
+          - mvn -B gpg:sign-and-deploy-file
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
