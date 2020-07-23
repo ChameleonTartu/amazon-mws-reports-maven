@@ -193,7 +193,7 @@ public class GetReportListByNextTokenResult {
     /**
      * Sets the value of the ReportInfo property.
      * 
-     * @param values {@link ReportInfo[]}
+     * @param values {@link ReportInfo} array
      * @return
      *     this instance
      */

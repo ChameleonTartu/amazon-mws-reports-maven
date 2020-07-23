@@ -94,7 +94,7 @@ public class StatusList {
     /**
      * Sets the value of the Status property.
      * 
-     * @param values {@link String[]}
+     * @param values {@link String} array
      * @return
      *     this instance
      */

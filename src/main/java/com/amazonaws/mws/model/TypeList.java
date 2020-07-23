@@ -95,7 +95,7 @@ public class TypeList {
     /**
      * Sets the value of the Type property.
      * 
-     * @param values {@link String[]}
+     * @param values {@link String} array
      * @return
      *     this instance
      */

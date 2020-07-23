@@ -193,7 +193,7 @@ public class GetFeedSubmissionListResult {
     /**
      * Sets the value of the FeedSubmissionInfo property.
      * 
-     * @param values {@link FeedSubmissionInfo[]}
+     * @param values {@link FeedSubmissionInfo} array
      * @return
      *     this instance
      */
@@ -209,7 +209,7 @@ public class GetFeedSubmissionListResult {
      * 
      * @param feedSubmissionInfoList
      *     allowed object is
-     *     {@link FeedSubmissionInfo }
+     *     {@link FeedSubmissionInfo}
      *     
      */
     public void setFeedSubmissionInfoList(List<FeedSubmissionInfo> feedSubmissionInfoList) {

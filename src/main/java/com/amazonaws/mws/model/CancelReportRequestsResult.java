@@ -136,7 +136,7 @@ public class CancelReportRequestsResult {
     /**
      * Sets the value of the ReportRequestInfo property.
      * 
-     * @param values {@link ReportRequestInfo[]}
+     * @param values {@link ReportRequestInfo} array
      * @return
      *     this instance
      */

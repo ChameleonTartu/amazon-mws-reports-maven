@@ -184,7 +184,7 @@ public class MarketplaceWebServiceConfig {
      * @param applicationName {@link String}
      * @param applicationVersion {@link String}
      * @param programmingLanguage {@link String}
-     * @param additionalNameValuePairs {@code String[]}
+     * @param additionalNameValuePairs {@link String} array
      */
     public void setUserAgent(
     		String applicationName, 
@@ -225,7 +225,7 @@ public class MarketplaceWebServiceConfig {
      * @param applicationName {@link String}
      * @param applicationVersion {@link String}
      * @param programmingLanguage {@link String}
-     * @param additionalNameValuePairs {@code String[]}
+     * @param additionalNameValuePairs {@link String} array
      *
      * @return MarketplaceWebServiceConfig
      */

@@ -139,7 +139,7 @@ public class CancelFeedSubmissionsResult {
     /**
      * Sets the value of the FeedSubmissionInfo property.
      * 
-     * @param values {@linkplain FeedSubmissionInfo[]}
+     * @param values {@link FeedSubmissionInfo} array
      * @return
      *     this instance
      */
@@ -155,7 +155,7 @@ public class CancelFeedSubmissionsResult {
      * 
      * @param feedSubmissionInfoList
      *     allowed object is
-     *     {@link FeedSubmissionInfo }
+     *     {@link FeedSubmissionInfo}
      *     
      */
     public void setFeedSubmissionInfoList(List<FeedSubmissionInfo> feedSubmissionInfoList) {

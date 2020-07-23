@@ -193,6 +193,7 @@
 						<quiet>true</quiet>
 						<detectOfflineLinks>false</detectOfflineLinks>
 						<encoding>${project.build.sourceEncoding}</encoding>
+						<additionalOptions>-html4</additionalOptions>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -326,6 +327,9 @@
 
 		<profile>
 			<id>release</id>
+			<activation>
+				<jdk>[1.6,)</jdk>
+			</activation>
 			<build>
 				<plugins>
 					<plugin>
@@ -347,6 +351,9 @@
 								<goals>
 									<goal>jar</goal>
 								</goals>
+								<configuration>
+									<additionalOptions>-html4</additionalOptions>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>

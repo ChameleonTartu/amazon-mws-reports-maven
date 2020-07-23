@@ -95,7 +95,7 @@ public class IdList {
     /**
      * Sets the value of the Id property.
      * 
-     * @param values {@link String[]}
+     * @param values {@link String} array
      * @return
      *     this instance
      */

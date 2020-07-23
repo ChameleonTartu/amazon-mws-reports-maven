@@ -340,7 +340,7 @@ public class Error {
         /**
          * Sets the value of the Any property.
          * 
-         * @param values {@link Object[]}
+         * @param values {@link Object} array
          * @return
          *     this instance
          */

@@ -183,7 +183,7 @@ public class GetReportListResult {
     /**
      * Sets the value of the ReportInfoList property.
      * 
-     * @param values {@link ReportInfo[]}
+     * @param values {@link ReportInfo} array
      * @return
      *     this instance
      */

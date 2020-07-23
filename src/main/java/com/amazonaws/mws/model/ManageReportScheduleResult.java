@@ -141,7 +141,7 @@ public class ManageReportScheduleResult {
     /**
      * Sets the value of the ReportSchedule property.
      * 
-     * @param values {@link ReportSchedule[]}
+     * @param values {@link ReportSchedule} array
      * @return
      *     this instance
      */
