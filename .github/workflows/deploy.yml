@@ -39,7 +39,6 @@ jobs:
         run: mvn -B clean install
       - name: Publish package
         run: |-
-          export $GPG_KEYNAME
           mvn -B deploy -DskiptTests=true -Dgpg.passphrase="${GPG_PASSPHRASE}" --Dgpg.keyname="${GPG_KEYNAME}"
         env:
           GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
