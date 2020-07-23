@@ -46,6 +46,7 @@
 
 	<properties>
 		<gpg.keyname>4E6EAFF03AFE4993A6DAE1509A6F8563B392C9A1</gpg.keyname>
+		<gpg.passphrase>${ env.GPG_PASSPHRASE }</gpg.passphrase>
 
 		<!-- Unify the encoding for all modules -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
