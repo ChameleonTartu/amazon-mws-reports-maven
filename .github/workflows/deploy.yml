@@ -25,7 +25,7 @@ jobs:
       - name: Recv Key
         env:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys ${env:GPG_PUBLIC_KEY}
+        run: gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys $GPG_PUBLIC_KEY
 
       - name: List Key
         env:
@@ -39,8 +39,8 @@ jobs:
         run: mvn -B clean install
       - name: Publish package
         run: |-
-          export ${env:GPG_KEYNAME}
-          mvn -B deploy -DskiptTests=true -Dgpg.passphrase="${env:GPG_PASSPHRASE}" --Dgpg.keyname="${env:GPG_KEYNAME}"
+          export $GPG_KEYNAME
+          mvn -B deploy -DskiptTests=true -Dgpg.passphrase="${GPG_PASSPHRASE}" --Dgpg.keyname="${GPG_KEYNAME}"
         env:
           GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
