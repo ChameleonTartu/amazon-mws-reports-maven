@@ -10,15 +10,18 @@ cache:
 jobs:
   include:
     - os: linux
-      jdk:
-        - openjdk8
-        - openjdk9
-        - openjdk10
-        - openjdk11
+      jdk: openjdk8
+    - os: linux
+      jdk: openjdk9
+    - os: linux
+      jdk: openjdk10
+    - os: linux
+      jdk: openjdk11
     - os: osx
-      jdk:
-        - openjdk9
-        - openjdk10
-        - openjdk11
+      jdk: openjdk9
+    - os: osx
+      jdk: openjdk10
+    - os: osx
+      jdk: openjdk11
 
 script: mvn clean install
