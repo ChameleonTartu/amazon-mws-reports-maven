@@ -16,11 +16,7 @@ jobs:
           server-password: MAVEN_PASSWORD
       - name: Publish package
         # Ignore JavaDoc as they are exactly as they were in native MWS Reports package
-        run:
-          - mvn clean package promote:make-promotable
-          - mvn javadoc:jar promote:make-promotable
-          - mvn source:jar promote:make-promotable
-          - mvn -B gpg:sign-and-deploy-file
+        run: mvn clean package -B gpg:sign-and-deploy-file
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
