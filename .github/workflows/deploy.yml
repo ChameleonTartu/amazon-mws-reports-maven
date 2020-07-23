@@ -14,13 +14,26 @@ jobs:
           server-id: ossrh
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
+      - name: Cache
+          uses: actions/cache@v1
+          with:
+            path: ~/.m2/repository
+            key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+            restore-keys: |
+              ${{ runner.os }}-maven-
+      - if: github.event.release
+        name: Update version in pom.xml (Release only)
+        run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
+      - name: Run Maven
+        run: mvn -B clean install
       - name: Publish package
-        # Ignore JavaDoc as they are exactly as they were in native MWS Reports package
         run: |-
-          echo $GPG_KEYNAME
-          mvn -X clean package -Dgpg.passphrase="$GPG_PASSPHRASE" -Dgpg.keyname="$GPG_KEYNAME" gpg:sign -B deploy
+          mvn -B deploy -DskiptTests=true -Dgpg.passphrase="${GPG_PASSPHRASE}"
         env:
           GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+
+
+# Examples are taken from: https://github.com/camunda/camunda-bpm-mockito/blob/465b4f5f2f29806a1a855e7cabf918b633df1075/.github/workflows/deploy.yml
