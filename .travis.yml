@@ -1,18 +1,24 @@
 language: java
 
-addons:
-  apt:
-    packages:
-      - openjdk-6-jdk
-os:
-  #- osx
-  - linux
-jdk:
-  - openjdk6
-  - openjdk7
-  - openjdk8
-  - openjdk9
-  - openjdk10
-  - openjdk11
-sudo: required
+sudo: false
+services:
+  - docker
+cache:
+  directories:
+    - $HOME/.m2
+
+jobs:
+  include:
+    - os: linux
+      jdk:
+        - openjdk8
+        - openjdk9
+        - openjdk10
+        - openjdk11
+    - os: osx
+      jdk:
+        - openjdk9
+        - openjdk10
+        - openjdk11
+
 script: mvn clean install
