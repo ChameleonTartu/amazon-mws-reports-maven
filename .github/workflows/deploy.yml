@@ -18,7 +18,7 @@ jobs:
         # Ignore JavaDoc as they are exactly as they were in native MWS Reports package
         run: |-
           echo $GPG_KEYNAME
-          mvn -X clean package -Dgpg.passphrase="$GPG_PASSPHRASE" -Dgpg.keyname="$GPG_KEYNAME" -s gpg:sign -B deploy
+          mvn -X clean package -Dgpg.passphrase="$GPG_PASSPHRASE" -Dgpg.keyname="$GPG_KEYNAME" gpg:sign -B deploy
         env:
           GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
