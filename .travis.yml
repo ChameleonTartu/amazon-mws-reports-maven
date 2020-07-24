@@ -1,14 +1,6 @@
 language: java
 
 sudo: false
-services:
-  - docker
-cache:
-  directories:
-    - $HOME/.m2
-#env:
-#  - GPG_KEYNAME=$GPG_KEYNAME
-#  - GPG_PASSPHRASE=$GPG_PASSPHRASE
 
 jobs:
   include:
@@ -27,4 +19,4 @@ jobs:
     - os: osx
       jdk: openjdk11
 
-script: mvn clean install
+script: mvn clean install -Dgpg.skip
