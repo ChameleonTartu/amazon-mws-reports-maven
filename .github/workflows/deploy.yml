@@ -34,12 +34,12 @@ jobs:
         run: |-
           export GPG_TTY=$(tty)
           echo $GPG_TTY
-          mvn -B clean install
+          mvn clean install
       - name: Sign sources
         run: mvn verify
       - name: Publish package
         run: |-
-          mvn -B deploy -Dgpg.passphrase="$GPG_PASSPHRASE"
+          mvn deploy -Dgpg.passphrase="$GPG_PASSPHRASE"
         env:
           GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
