@@ -23,7 +23,7 @@ jobs:
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       - name: Import GPG Key
-        run: gpg --no-tty --import --batch private.key
+        run: gpg --import --batch private.key
       - name: Cache
         uses: actions/cache@v1
         with:
