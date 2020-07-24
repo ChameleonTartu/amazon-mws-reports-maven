@@ -301,7 +301,7 @@
 
 	<profiles>
 		<profile>
-			<id>release</id>
+			<id>deploy</id>
 			<activation>
 				<jdk>[1.6,)</jdk>
 			</activation>
