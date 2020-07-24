@@ -17,7 +17,7 @@ jobs:
         name: Update version in pom.xml (Release only)
         run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
       - name: Release Maven package
-        uses: samuelmeuli/action-maven-publish@v1.0.0
+        uses: samuelmeuli/action-maven-publish@v1.4.0
         with:
           maven_profiles:
             - deploy
