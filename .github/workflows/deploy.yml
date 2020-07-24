@@ -13,8 +13,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 8
+      - if: github.event.release
+        name: Update version in pom.xml (Release only)
+        run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
       - name: Release Maven package
-        uses: samuelmeuli/action-maven-publish@v1
+        uses: samuelmeuli/action-maven-publish@v1.0.0
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
