@@ -46,9 +46,9 @@
 
 	<properties>
 		<!--suppress UnresolvedMavenProperty -->
-		<gpg.keyname>$GPG_KEYNAME</gpg.keyname>
+<!--		<gpg.keyname>$GPG_KEYNAME</gpg.keyname>-->
 		<!--suppress UnresolvedMavenProperty -->
-		<gpg.passphrase>$GPG_PASSPHRASE</gpg.passphrase>
+<!--		<gpg.passphrase>$GPG_PASSPHRASE</gpg.passphrase>-->
 
 		<!-- Unify the encoding for all modules -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
