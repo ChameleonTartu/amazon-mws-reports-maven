@@ -20,8 +20,6 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       - name: Import GPG Key
         run: gpg --import --batch private.key
-      - name: Set TTY
-        run: export GPG_TTY=$(tty)
       - name: Cache
         uses: actions/cache@v1
         with:
@@ -33,7 +31,10 @@ jobs:
         name: Update version in pom.xml (Release only)
         run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
       - name: Run Maven
-        run: mvn -B clean install
+        run: |-
+          export GPG_TTY=$(tty)
+          echo $GPG_TTY
+          mvn -B clean install
       - name: Sign sources
         run: mvn verify
       - name: Publish package
