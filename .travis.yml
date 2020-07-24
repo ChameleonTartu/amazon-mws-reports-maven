@@ -19,4 +19,4 @@ jobs:
     - os: osx
       jdk: openjdk11
 
-script: mvn clean install -Dgpg.skip
+script: mvn clean install -DskipTests -Dgpg.skip
