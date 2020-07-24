@@ -10,47 +10,16 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Maven Central Repository
+      - name: Check out Git repository
+          uses: actions/checkout@v2
+      - name: Install Java and Maven
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
-          server-id: ossrh
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
-      - name: Create Key File
-        run: echo "$GPG_PRIVATE_KEY" > private.key
-        env:
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-      - name: Import GPG Key
-        run: gpg --import --batch private.key
-      - name: Cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-      - if: github.event.release
-        name: Update version in pom.xml (Release only)
-        run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
-      - name: Run Maven
-        run: |-
-          cat ~/.gnupg/gpg.conf
-          cat ~/.gnupg/options
-          mvn -B clean install
-      - name: Sign sources
-        run: mvn verify
-      - name: Publish package
-        run: |-
-          mvn -B deploy -Dgpg.passphrase="$GPG_PASSPHRASE"
-        env:
-          GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-
-
-# Examples are taken from
-# - https://github.com/camunda/camunda-bpm-mockito/blob/465b4f5f2f29806a1a855e7cabf918b633df1075/.github/workflows/deploy.yml
-# - https://github.com/see-es-vee/see-es-vee/blob/43bec4ef0005caa9b30cf11bf10efe03bd517733/.github/workflows/mavenpublish.yml
+          java-version: 8
+      - name: Release Maven package
+          uses: samuelmeuli/action-maven-publish@v1
+          with:
+            gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+            gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
+            nexus_username: ${{ secrets.OSSRH_USERNAME }}
+            nexus_password: ${{ secrets.OSSRH_TOKEN }}
