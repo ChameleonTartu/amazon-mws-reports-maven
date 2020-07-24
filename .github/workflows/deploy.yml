@@ -32,6 +32,8 @@ jobs:
         run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
       - name: Run Maven
         run: mvn -B clean install
+      - name: Sign sources
+        run: mvn verify
       - name: Publish package
         run: |-
           mvn -B deploy -Dgpg.passphrase="$GPG_PASSPHRASE"
