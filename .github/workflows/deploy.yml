@@ -36,6 +36,8 @@ jobs:
         run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
       - name: Run Maven
         run: |-
+          cat ~/.gnupg/gpg.conf
+          cat ~/.gnupg/options
           mvn -B clean install
       - name: Sign sources
         run: mvn verify
