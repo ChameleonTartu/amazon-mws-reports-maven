@@ -40,7 +40,7 @@
 
 	<scm>
 		<connection>scm:git:git@github.com:ChameleonTartu/amazon-mws-reports-maven.git</connection>
-		<developerConnection>scm:git:git@github.com:ChameleonTartu/amazon-mws-orders-maven.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:ChameleonTartu/amazon-mws-reports-maven.git</developerConnection>
 		<url>https://github.com/ChameleonTartu/amazon-mws-reports-maven/tree/master</url>
 	</scm>
 
