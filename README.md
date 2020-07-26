@@ -43,7 +43,7 @@ Dependency itself:
 <dependency>
     <groupId>com.github.chameleontartu</groupId>
     <artifactId>amazon-mws-reports-maven</artifactId>
-    <version>1.20.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
