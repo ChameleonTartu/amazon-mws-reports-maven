@@ -2,7 +2,7 @@
 Mavenized version of Amazon MWS Reports API
 
 [![Hits-of-Code](https://hitsofcode.com/github/chameleontartu/amazon-mws-reports-maven)](https://hitsofcode.com/view/github/chameleontartu/amazon-mws-reports-maven)
-[![Travis CI](https://travis-ci.org/ChameleonTartu/amazon-mws-reports-maven.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![Travis CI](https://travis-ci.org/ChameleonTartu/amazon-mws-reports-maven.svg?branch=master)](https://travis-ci.org/ChameleonTartu/amazon-mws-reports-maven)
 ![Maven Central](https://img.shields.io/maven-central/v/com.github.chameleontartu/amazon-mws-reports-maven)
 [![](https://jitpack.io/v/ChameleonTartu/amazon-mws-reports-maven.svg)](https://jitpack.io/#ChameleonTartu/amazon-mws-reports-maven)
 
