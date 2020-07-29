@@ -56,6 +56,12 @@ This project inspired by [ext-lib-amazon-mws-products](https://github.com/trifon
 
 The other MWS projects that ported from Ant to Maven. See [docs](https://github.com/ChameleonTartu/amazon-mws-docs).
 
+# Java library version
+
+| Lib version  |
+|--------------|
+| 2016-09-21   |
+
 # Contribution
 
 To contribute to this project feel free to submit issues and PRs. This section is under development, so feel free to submit issues with additional questions.
