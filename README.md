@@ -1,5 +1,5 @@
 # amazon-mws-reports-maven
-Mavenized version of Amazon MWS Report API
+Mavenized version of Amazon MWS Reports API
 
 [![Hits-of-Code](https://hitsofcode.com/github/chameleontartu/amazon-mws-reports-maven)](https://hitsofcode.com/view/github/chameleontartu/amazon-mws-reports-maven)
 [![Travis CI](https://travis-ci.org/ChameleonTartu/amazon-mws-reports-maven.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
@@ -50,7 +50,11 @@ Dependency itself:
 
 # Inspiration
 
-This project was inspired by [ext-lib-amazon-mws-products](https://github.com/trifonnt/ext-lib-amazon-mws-products)
+This project inspired by [ext-lib-amazon-mws-products](https://github.com/trifonnt/ext-lib-amazon-mws-products)
+
+# Docs and other MWS projects
+
+The other MWS projects that ported from Ant to Maven. See [docs](https://github.com/ChameleonTartu/amazon-mws-docs).
 
 # Contribution
 
