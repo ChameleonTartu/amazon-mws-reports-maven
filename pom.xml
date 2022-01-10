@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.chameleontartu</groupId>
 	<artifactId>amazon-mws-reports-maven</artifactId>
-	<version>1.2.0</version>
+	<version>1.5.0</version>
 	<packaging>jar</packaging>
 	<name>Amazon MWS :: Reports</name>
 	<description>Amazon MWS Reports API Client Library</description>
@@ -13,7 +13,7 @@
 	<licenses>
 		<license>
 			<name>The Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -22,7 +22,6 @@
 		<developer>
 			<id>chameleontartu</id>
 			<name>Dmytro Chasovskyi</name>
-			<email>dmitriy.chasovskoy@gmail.com</email>
 			<url>https://www.linkedin.com/in/dmytrochasovskyi/</url>
 			<roles>
 				<role>developer</role>
@@ -49,59 +48,53 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<jdk.version>1.6</jdk.version>
-		<compiler.fork>1.6</compiler.fork>
+		<jdk.version>1.7</jdk.version>
 
 		<!-- Dependencies -->
-		<maven-bundle-version>2.3.7</maven-bundle-version>
-		<commons-codec-version>1.14</commons-codec-version>
-		<commons-httpclient-version>3.1</commons-httpclient-version>
-		<commons-logging-version>1.1</commons-logging-version>
+		<commons-codec.version>1.15</commons-codec.version>
+		<commons-logging.version>1.1</commons-logging.version>
 
-		<httpcore.version>4.4.13</httpcore.version>
-		<httpclient.version>4.5.12</httpclient.version>
+		<httpcore.version>4.4.15</httpcore.version>
+		<httpclient.version>4.5.13</httpclient.version>
 
-		<mockito-version>1.9.5</mockito-version>
-		<junit-version>4.13.1</junit-version>
+		<mockito.version>1.10.19</mockito.version>
+		<junit.version>4.13.2</junit.version>
 		<jaxb-api.version>2.3.1</jaxb-api.version>
+		<log4j-core.version>2.17.1</log4j-core.version>
+		<jaxb-runtime.version>2.3.2</jaxb-runtime.version>
+		<activation.version>1.1.1</activation.version>
 
 		<!-- Plugins -->
 		<maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
 		<maven-idea-plugin.version>2.2.1</maven-idea-plugin.version>
-
-
 		<maven-bundle-plugin.version>5.1.1</maven-bundle-plugin.version>
-		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+		<maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
 		<maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 		<build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
-		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-		<maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
 		<maven-install-plugin.version>2.5.2</maven-install-plugin.version>
 		<maven-scm-provider-gitexe.version>1.11.2</maven-scm-provider-gitexe.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
 		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+
+		<dependency-check-maven.version>6.5.2</dependency-check-maven.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>${commons-codec-version}</version>
+			<version>${commons-codec.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-			<version>${commons-httpclient-version}</version>
-		</dependency>
-
-		<dependency>
-		    <groupId>commons-logging</groupId>
-		    <artifactId>commons-logging-api</artifactId>
-		    <version>${commons-logging-version}</version>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging-api</artifactId>
+			<version>${commons-logging.version}</version>
 		</dependency>
 
 		<dependency>
@@ -117,23 +110,41 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>${mockito-version}</version>
-			<scope>test</scope>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j-core.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit-version}</version>
-			<scope>test</scope>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>${activation.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>${jaxb-runtime.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 			<version>${jaxb-api.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${mockito.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -159,8 +170,6 @@
 					<configuration>
 						<source>${jdk.version}</source>
 						<target>${jdk.version}</target>
-						<maxmem>256M</maxmem>
-						<fork>${compiler.fork}</fork>
 					</configuration>
 				</plugin>
 
@@ -183,7 +192,6 @@
 						<downloadJavadocs>false</downloadJavadocs>
 					</configuration>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
@@ -194,6 +202,7 @@
 						<quiet>true</quiet>
 						<detectOfflineLinks>false</detectOfflineLinks>
 						<encoding>${project.build.sourceEncoding}</encoding>
+						<doclint>none</doclint>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -269,7 +278,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>${maven-deploy-plugin.version}</version>
@@ -283,16 +291,26 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>${dependency-check-maven.version}</version>
+				<executions>
+					<execution>
+						<id>owasp</id>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<cveValidForHours>1</cveValidForHours>
+					<failBuildOnCVSS>5.0</failBuildOnCVSS>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
-		</repository>
-	</repositories>
 
 	<profiles>
 		<profile>
@@ -331,7 +349,7 @@
 		<profile>
 			<id>deploy</id>
 			<activation>
-				<jdk>[1.6,)</jdk>
+				<jdk>[1.8,)</jdk>
 			</activation>
 			<build>
 				<plugins>
